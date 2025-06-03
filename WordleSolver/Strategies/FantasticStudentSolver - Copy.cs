@@ -8,11 +8,17 @@ using WordleSolver.Models;
 namespace WordleSolver.Strategies;
 
 /// <summary>
-/// A much smarter Wordle solver strategy that:
-/// - Starts with a strong word ("arose")
-/// - Filters remaining words using feedback (Correct, Misplaced, Unused)
-/// - Picks the next guess using letter-frequency heuristics
+/// This Wordle solver starts by guessing the word "arose" because it has common letters 
+/// that give a lot of info. It keeps a list of all the possible five-letter words from the 
+/// dictionary. After each guess, it looks at the feedback: green means the letter is in 
+/// the right spot, yellow means the letter is in the word but in the wrong spot, and gray 
+/// means the letter isn’t in the word at all (unless it was green or yellow somewhere else). 
+/// It then removes all the words that don't fit this feedback. To pick the next guess, it 
+/// uses a smart strategy that checks which letters show up the most in the remaining words. 
+/// It adds up how often each letter appears and picks the word with the highest total to 
+/// guess next. This helps it figure out the correct word in just a few turns.
 /// </summary>
+
 public sealed class FantasticStudentSolver : IWordleSolverStrategy
 {
     private static readonly string WordListPath = Path.Combine("data", "wordle.txt");
