@@ -1,5 +1,6 @@
 
-namespace WordleSolver;
+namespace WordleSolver.Models;
+
 
 /// <summary>
 /// Indicates how a single letter of a guess relates to the secret answer.

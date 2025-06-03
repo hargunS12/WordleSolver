@@ -1,5 +1,7 @@
 
 using System.Collections.Generic;
+using WordleSolver.Models;
+
 
 namespace WordleSolver.Strategies;
 

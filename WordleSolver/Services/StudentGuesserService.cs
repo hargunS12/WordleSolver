@@ -1,3 +1,4 @@
+using WordleSolver.Models;
 
 using System;
 using WordleSolver.Strategies;

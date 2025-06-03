@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using WordleSolver.Services;
 
-namespace WordleSolver;
+namespace WordleSolver.Models;
+
+
+
 
 /// <summary>
 /// Contains complete feedback for a single guess and running game state.

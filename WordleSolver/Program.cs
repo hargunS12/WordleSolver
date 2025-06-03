@@ -3,6 +3,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using WordleSolver.Services;
 using WordleSolver.Strategies;
+using WordleSolver.Models;
+
 
 var host = Host.CreateDefaultBuilder()
     .ConfigureServices(services =>
@@ -11,7 +13,7 @@ var host = Host.CreateDefaultBuilder()
         services.AddSingleton<WordleService>();
 
         // Student-supplied strategy
-        services.AddSingleton<IWordleSolverStrategy, SlowStudentSolver>();
+        services.AddSingleton<IWordleSolverStrategy, FantasticStudentSolver>();
 
         // Driver that runs many games
         services.AddSingleton<StudentGuesserService>();
@@ -19,4 +21,4 @@ var host = Host.CreateDefaultBuilder()
     .Build();
 
 var runner = host.Services.GetRequiredService<StudentGuesserService>();
-runner.Run(1000);
+runner.Run(1000);  

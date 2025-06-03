@@ -1,3 +1,4 @@
+using WordleSolver.Models;
 
 namespace WordleSolver.Strategies;
 
